@@ -1,0 +1,24 @@
+{
+  "name": "Accrual report",
+  "namespace": "uzgent\\AccrualReport",
+  "description": "This allows users to view an accrual report based on a selected date field.",
+  "authors": [
+    {
+      "name": "Lieven Vaneeckhaute",
+      "email": "lieven.vaneeckhaute@uzgent.be",
+      "institution": "University Hospital Ghent"
+    }
+  ],
+  "documentation" : "howto.html",
+  "permissions": [
+  ],
+  "links": {
+    "project": [
+      {
+        "name": "Generate accrual report",
+        "url": "accrual_select.php",
+        "show-header-and-footer": true
+      }
+    ]
+  }
+}
