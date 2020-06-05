@@ -35,6 +35,9 @@ class AccrualReport extends \ExternalModules\AbstractExternalModule {
         $dags = [];
         foreach ($data as $recordId => $recordDetails) {
             foreach ($recordDetails as $event => $recordDetailsDeep) {
+                if ($recordDetailsDeep[$datefieldname] == null || $recordDetailsDeep[$datefieldname] == ""){
+                    continue;//skip empties.
+                }
                 $dag = $recordDetailsDeep["redcap_data_access_group"];
                 if ($dag == '') {
                     $dag = NODAG_NAME;
@@ -67,7 +70,7 @@ class AccrualReport extends \ExternalModules\AbstractExternalModule {
 
         foreach ($dateKeys as $dateKey) {
 
-            echo "['" . $dateKey . "', " . $this->returnDagSortedCumul($datemapPerDag[$dateKey], $dags) . "],";
+            echo "[new Date('" . $dateKey . "'), " . $this->returnDagSortedCumul($datemapPerDag[$dateKey], $dags) . "],";
         }
         return $dateKeys;
     }
